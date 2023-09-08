@@ -13,6 +13,15 @@ class OwnerController extends Controller
     {
 
         try {
+
+            $request->validate([
+                'ccnumber' => 'required',
+                'name' => 'required',
+                'lastName' => 'required',
+                'address' => 'required',
+                'phoneNumber' => 'required',
+                'city' => 'required'
+            ]);
             $model = new owner();
             $model->number_cc = $request->ccnumber;
             $model->first_name = $request->name;

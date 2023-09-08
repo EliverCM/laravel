@@ -16,6 +16,14 @@ class VehicleController extends Controller
     {
 
         try {
+            $request->validate([
+                'plate' => 'required',
+                'brand' => 'required',
+                'type' => 'required',
+                'color' => 'required',
+                'driver' => 'required',
+                'owner' => 'required'
+            ]);
             $model = new vehiculo();
             $model->plate = $request->plate;
             $model->id_brand = $request->brand;

@@ -17,7 +17,7 @@ class CreateOwnersTable extends Migration
             $table->bigIncrements('id_owner');
             $table->bigInteger('number_cc')->notNullable();
             $table->string('first_name', 50)->notNullable();
-            $table->string('middle_name', 50);
+            $table->string('middle_name', 50)->nullable();
             $table->string('last_name', 100)->notNullable();
             $table->string('address', 150)->notNullable();
             $table->bigInteger('phone_number')->notNullable();
